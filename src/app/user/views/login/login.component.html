@@ -1,0 +1,37 @@
+<div class="middle-box loginscreen  animated fadeInDown">
+    <div class="row p-3">
+            <div class="logo col-12">
+                <img src="assets/img/logo.png" class="">
+                <p class="logo-name">Tegus</p>
+                <p>Maximizing the Value of</p>
+                <p>Financial Knowledge</p>
+            </div>
+    </div>
+    <div class="row bg-white p-3 mt-4">
+        <div class="col-12">
+            <h3>Analytics Add-on Sign In</h3>
+            <form #nForm="ngForm" [formGroup]="rForm" (ngSubmit)="rForm.valid && login()" novalidate
+                [ngClass]="{'submitted-form':nForm.submitted }">
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" placeholder="Username" formControlName="userName">
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                </div>
+                <a href="#" class="text-left">Forgot password?</a>
+                <button type="submit" class="btn btn-primary block full-width mt-2 btn-login">Sign In</button>
+            </form>
+            <div class="text-center mt-4">
+                <a href="#">Request a Trial</a>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a href="#">Need Help? Contuct us</a>
+    </div>
+    <div class="text-center mt-2">
+        <a href="#">Terms of Use</a>
+    </div>
+</div>

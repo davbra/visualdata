@@ -1,0 +1,32 @@
+<ngx-smart-modal customClass="nsm-centered modal-lg" #addReportDetailsModal identifier="addReportDetailsModal"
+    [dismissable]="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">{{title}} <br>
+                <span class="badge badge-secondary">{{analyticsItem?.analyticsType.name}}: {{analyticsItem?.documentName}}</span></h3>
+                <button type="button" class="close" (click)="addReportDetailsModal.close()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form #nForm="ngForm" [formGroup]="rForm" (ngSubmit)="rForm.valid && saveBtnClicked == false && save()"  novalidate
+            [ngClass]="{'submitted-form':nForm.submitted }" >
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <label for="">Topic Name: </label>
+                            <input type="text" class="form-control" formControlName="topicName">
+                        </div>
+                        <div class="col-12 form-group" *ngIf="showEditor == true">
+                            <ckeditor formControlName="htmlDetails" [config]="ckEditorConfig" (ready)="onReady()"></ckeditor>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-blue-outline" (click)="addReportDetailsModal.close()">Cancel</button>
+                    <button type="submit" class="btn btn-blue" >Save </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</ngx-smart-modal>

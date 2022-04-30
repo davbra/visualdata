@@ -1,0 +1,16 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import 'font-awesome/css/font-awesome.min.css';
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'sweetalert2/src/sweetalert2.scss';
+
+//components
+@import './components/template';
+
+//plugins
+@import './plugins/ngx-pagination';
+@import './plugins/ng-select';
+@import './plugins/ngx-bar-rating';
+@import './plugins/ngx-smart-modal';
+@import './plugins/mark-js';
+@import './plugins/angular-material';
+

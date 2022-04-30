@@ -1,0 +1,24 @@
+@import url(assets/css/animate.css);
+@import url(assets/css/style.css);
+
+@import './toggle-buttons';
+@import './checkbox-bootstrap';
+@import './table';
+@import './border';
+@import './badge';
+@import './input';
+@import './range-slider';
+
+.submitted-form .ng-invalid:not(form):not(table):not(tr):not(div):not(ngx-intl-tel-input) {
+  border: 1px solid lightcoral;
+}
+
+.vh-align {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+}
+
+.ibox-footer .btn{
+  width:150px;
+}

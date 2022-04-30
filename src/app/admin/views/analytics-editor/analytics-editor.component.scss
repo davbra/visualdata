@@ -1,0 +1,110 @@
+th .checkbox .cr {
+    width    : 14px;
+    height   : 14px;
+    font-size: .8rem;
+
+    .cr-icon {
+        left: unset;
+    }
+}
+
+.top-table-div {
+    background-color: #E8F6FD;
+    height          : 34px;
+    font-family     : 'Noto Sans JP';
+
+    span {
+        color         : #00385C;
+        font-size     : 12px;
+        font-weight   : bold;
+        line-height   : 34px;
+        vertical-align: middle
+    }
+
+    .btn {
+        height     : 28px;
+        width      : 113px;
+        color      : white;
+        padding    : 0px;
+        text-align : center;
+        margin-top : 3px;
+        font-weight: bold;
+        font-size  : 12px;
+
+        &-copy {
+            background-color: #00385C;
+            border-color    : #00385C;
+        }
+
+        &-delete {
+            background-color: #FF1A5E;
+            border-color    : #FF1A5E;
+        }
+
+        &-deselect {
+            background-color: #00385C;
+            height          : 22px;
+            width           : 80px;
+        }
+    }
+}
+
+.btn-create {
+    height          : 32px;
+    width           : 245px;
+    color           : white;
+    font-weight     : bold;
+    font-size       : 12px;
+    font-family     : 'Noto Sans JP';
+    background-color: #0088EE !important;
+}
+
+
+.page-title {
+    color: #00385C;
+
+    span {
+        font-size  : 20px;
+        font-weight: bold;
+    }
+
+    small {
+        font-size  : 12px;
+        font-weight: normal;
+    }
+
+    img {
+        vertical-align: sub;
+    }
+}
+
+.alert-msg {
+    color      : #00385C;
+    font-size  : 12px;
+    font-weight: normal;
+    line-height: 34px;
+    font-family: 'Noto Sans JP';
+
+    a {
+        color: #00385C;
+
+        &:hover {
+            color: #00385C;
+        }
+    }
+}
+
+.fold .btn-collapse {
+    width     : 30px;
+    height    : 30px;
+    position  : absolute;
+    bottom    : 10px;
+    right     : 10px;
+    z-index   : 5;
+    text-align: center;
+
+    img {
+        margin-top: 5px;
+        z-index   : 10;
+    }
+}

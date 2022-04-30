@@ -1,0 +1,107 @@
+<div class="ibox ">
+    <div class="ibox-content border-0" style="min-height: 70vh;">
+        <div class="row mb-3 mt-2">
+            <div class="col-12 ">
+                <app-page-title [pageTitle]="'Companies'" [iconUrl]="'assets/img/icons/company-24px.png'">
+                    <button type="button" class="btn float-right btn-create" (click)="showAddCompanyPopup()">
+                        Create New Company</button>
+                </app-page-title>
+            </div>
+        </div>
+        <div class="row mb-2 mt-2 top-table-div" *ngIf="totalSelectedCompanies != 0">
+            <div class="col-12 align-middle">
+                <span class="mt-1">{{totalSelectedCompanies}} document selected</span>
+
+                <div class="float-right mr-1">
+                    <button type="button" class="btn btn-primary btn-delete" (click)="deleteSelectedRecords()">
+                        <img src="assets/img/icons/delete.png" alt="">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="fold-table">
+                    <table class="table table-inverse table-hover" matSort (matSortChange)="onSort($event)">
+                        <thead class="thead-inverse" [formGroup]="rForm">
+                            <tr>
+                                <th style="width: 65px;">
+                                    <div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" formControlName="isSelectAll">
+                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="p-0 bg-white">
+                                        <div class="input-icons">
+                                            <i class="fa fa-search icon" style="padding: 8px;"></i>
+                                            <input type="text" class="form-control form-control-sm input-field"
+                                                placeholder="Search by Name" formControlName="name">
+                                        </div>
+                                        <div class="mr-2 ml-2 hide-mat-icon" mat-sort-header="name"
+                                            style="background-color: #F6F6F6; padding: 5px;    border-radius: 5px;">
+                                            <img src="../../../../assets/img/icons/swap_vert-24px.png" alt="">
+                                        </div>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>Ticker Name</div>
+                                </th>
+                                <th style="width: 200px;">
+                                    <div class="p-0 bg-white">
+                                        <ng-select [items]="companyTypeArr" bindLabel="name" bindValue="id"
+                                            [multiple]="false" placeholder="Type" formControlName="isPrimary">
+                                        </ng-select>
+                                    </div>
+                                </th>
+                                <th class="text-center"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let item of companyArr ;let i = index; trackBy:trackById ">
+                                <tr class="separator" *ngIf="i == 0"></tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" [(ngModel)]="item.isSelected">
+                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="document-name">{{item.name}}</td>
+                                    <td>{{item.tickerName}}</td>
+                                    <td>
+                                        <span *ngIf="item.isPrimary == true">Primary</span>
+                                        <span *ngIf="item.isPrimary != true">Secondary</span>
+                                    </td>
+                                    <td>
+                                        <div class="operations text-center on-hover">
+                                            <button type="button" class="btn btn-success mr-1 rounded"
+                                                (click)="showAddCompanyPopup(item.id)"
+                                                style="height: 24px;width:65px;font-size: 12px;line-height: 12px;">Edit</button>
+
+                                            <a href="javascript:void(0)" (click)="delete(item.id)">
+                                                <img src="assets/img/icons/delete.png" alt="">
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="separator"></tr>
+                            </ng-container>
+                        </tbody>
+                    </table>
+                    <div class="text-center" *ngIf="rForm?.value.count > rForm?.value.take">
+                        <button type="button" class="btn btn-outline-primary" style="width: 200px;"
+                            (click)="onLoadMore()">Loading More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-add-company-popup #addCompanyPopup></app-add-company-popup>

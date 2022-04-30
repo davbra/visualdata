@@ -1,0 +1,24 @@
+<div class="navbar-header">
+    <div class="navbar-form-custom" [hidden]="hidecompanyFilter">
+        <div class="form-inline" [formGroup]="rForm">
+            <span class="span-search">
+                <img src="assets/img/icons/find_in_page-24px.png" alt=""> 
+                Search Content
+            </span>
+            <div class="form-group mr-2">
+                <ng-select [items]="companyArr" bindLabel="name" bindValue="id" [multiple]="false"
+                    formControlName="companyIdArr" placeholder="Company search" class="custom">
+                </ng-select>
+            </div>
+            <div class="form-group">
+                <div class="input-icons">
+                    <i class="fa fa-quote-right"></i>
+                    <input type="text" class="form-control form-control-sm input-field" placeholder="Keyword Search"
+                        formControlName="text">
+                      <img src="assets/img/icons/Group5.png" alt="">
+                </div>
+            </div>
+            <a href="javascript:void(0)"  class="mr-2"><img src="assets/img/icons/info-24px.png" alt=""> </a>
+        </div>
+    </div>
+</div>

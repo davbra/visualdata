@@ -1,0 +1,29 @@
+<ngx-smart-modal customClass="nsm-centered modal-lg" #addAnalyticsDetailsDescriptionModal identifier="addAnalyticsDetailsDescriptionModal"
+    [dismissable]="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Edit Description <br>
+                <span class="badge badge-secondary">{{analyticsItem?.analyticsType.name}}: {{analyticsItem?.documentName}}</span></h3>
+                <button type="button" class="close" (click)="addAnalyticsDetailsDescriptionModal.close()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form #nForm="ngForm" [formGroup]="rForm" (ngSubmit)="rForm.valid && saveBtnClicked == false && save()"  novalidate
+            [ngClass]="{'submitted-form':nForm.submitted }" >
+                <div class="modal-body">
+                    <div class="row">
+                       <div class="col-12 form-group">
+                         <label for="">Description</label>
+                         <textarea class="form-control" rows="4" formControlName="description"></textarea>
+                       </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-blue-outline" (click)="addAnalyticsDetailsDescriptionModal.close()">Cancel</button>
+                    <button type="submit" class="btn btn-blue" >Save </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</ngx-smart-modal>

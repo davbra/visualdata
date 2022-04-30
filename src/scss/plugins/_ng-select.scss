@@ -1,0 +1,19 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+.ng-select .ng-select-container{
+    border: 1px solid #e5e6e7 !important;
+    border-radius: 1px !important;
+}
+
+.ng-select.ng-select-single .ng-select-container{
+    height: 35px ;
+    min-height      : 35px ;
+}
+
+.ng-select.ng-select-disabled>.ng-select-container {
+    background-color: #e9ecef;
+}
+
+.ng-select .ng-select-container .ng-value-container .ng-placeholder {
+    color: #495057;
+}

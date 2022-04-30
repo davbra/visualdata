@@ -1,0 +1,22 @@
+[
+    {
+        "name" :"Primer",
+        "type":"pdf"
+    },
+    {
+        "name" :"Deep Dive",
+        "type":"pdf"
+    },
+    {
+        "name" :"Perspective",
+        "type":"pdf"
+    },
+    {
+        "name":"Survey",
+        "type":"xls"
+    },
+    {
+        "name":"Video",
+        "type":"video"
+    }
+]

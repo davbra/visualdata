@@ -1,0 +1,25 @@
+@import '~ngx-bar-rating/themes/br-default-theme';
+@import '~ngx-bar-rating/themes/br-fontawesome-o-theme';
+
+bar-rating {
+    display: inline-block;
+
+    .br {
+        margin: 0px !important;
+    }
+
+    .br-default,
+    .br-fontawesome-o {
+
+        .br-selected,
+        .br-fraction {
+            &:after {
+                color: #1f9ae8cf !important;
+            }
+        }
+
+        .br-active:after {
+            color: #1f9ae8cf !important;
+        }
+    }
+}

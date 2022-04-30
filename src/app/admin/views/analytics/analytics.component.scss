@@ -1,0 +1,40 @@
+ul ul li {
+  list-style-type: disc;
+}
+
+.download-btn {
+  background-color: #0088EE;
+  font-size       : 12px;
+  font-weight     : bold;
+  letter-spacing  : .5px;
+  font-family     : 'Noto Sans JP';
+  padding         : .2rem .75rem !important;
+  height          : 32px;
+}
+
+
+:host ::ng-deep .ng-select.select-flag {
+  .ng-select-container {
+    padding-left: 5px;
+
+    .ng-value-container {
+      padding-left: 0px;
+    }
+  }
+}
+
+.coming-soon{
+  font-size: 12px;
+  font-weight: normal;
+  color: #00385C;
+  font-family: 'Noto Sans JP';
+  margin-top: 5px;
+}
+
+::ng-deep .div-questions {
+  ul,
+  ol {
+      margin-bottom: 0px !important;
+      padding-inline-start: 20px !important;
+  }
+}

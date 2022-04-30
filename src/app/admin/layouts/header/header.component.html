@@ -1,0 +1,27 @@
+<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <app-header-details [hidecompanyFilter]="hideCompanyFilter"></app-header-details>
+    <!-- <div>
+        <h2 class="page-title font-weight-bold text-dark mt-1">Tegus Analytics <small
+                class="font-weight-bold ml-1 h6">Beta</small></h2>
+    </div> -->
+    <ul class="nav navbar-top-links navbar-right">
+        <li class="dropdown user-menu">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <img src="../../../../assets/img/icons/account_circle-24px.png" alt="" class="mr-1">
+                Account Name
+                <div class="bg-gray rounded-circle ml-1">
+                    <i class="fa fa-sort-desc " aria-hidden="true"></i>
+                </div>
+
+            </a>
+            <ul class="dropdown-menu dropdown-alerts">
+                <li>
+                    <a href="javascript:void(0)"> Settings </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" (click)="logout()"> Log out </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

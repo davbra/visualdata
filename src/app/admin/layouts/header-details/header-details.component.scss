@@ -1,0 +1,63 @@
+.navbar-form-custom {
+    width: 650px !important;
+}
+
+:host ::ng-deep .ng-select {
+    width: 200px;
+
+    .ng-select-container {
+        min-height: 31px !important;
+        height    : 31px !important;
+
+        &:before {
+            font-family: FontAwesome;
+            content    : "\f1ad ";
+            color      : #00385C;
+            margin-left: 5px;
+        }
+
+        .ng-input {
+            left: 10px !important;
+        }
+    }
+}
+
+.navbar-form-custom .form-control {
+    background-color: #FFFFFF;
+    border          : 1px solid #e5e6e7;
+
+    &.form-control-sm {
+        height: 31px;
+    }
+}
+
+.form-inline {
+    margin-top: 7px;
+}
+
+.input-icons {
+    position: relative;
+
+    input {
+        padding-right: 20px;
+    }
+
+    i {
+        color  : #00385C;
+        padding: 10px 5px;
+    }
+
+    img {
+        position: absolute;
+        right   : 5px;
+        top     : 5px;
+    }
+}
+
+.span-search {
+    color       : 00385C;
+    font-size   : 12px;
+    font-family : 'Noto Sans JP';
+    font-weight : normal;
+    margin-right: 10px;
+}

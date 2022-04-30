@@ -1,0 +1,13 @@
+
+.b-rounded {
+    &-1 {
+      border-radius: 10px;
+    }
+    &-2 {
+      border-radius: 20px;
+    }
+  
+    &-bottom-left-0{
+      border-bottom-left-radius: 0px !important;
+    }
+  }

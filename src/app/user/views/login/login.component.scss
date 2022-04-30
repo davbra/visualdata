@@ -1,0 +1,65 @@
+::ng-deep body.gray-bg {
+  background-image: linear-gradient(#00589B, #FFC1C1) !important;
+}
+
+.loginscreen {
+  padding-top  : 10%;
+  width        : 403px !important;
+  font-family  : 'Noto Sans JP';
+  border-radius: 5px;
+
+  .logo {
+    padding-left: 50px;
+    height      : 70px;
+    color       : white;
+
+    p {
+      margin-bottom: 0px;
+      font-size    : 12px;
+      font-weight  : normal;
+
+      &.logo-name {
+        letter-spacing: 1px;
+        font-weight: bold;
+        font-size  : 20px !important;
+      }
+    }
+
+    img {
+      position: absolute;
+      top     : 0px;
+      left    : 0px;
+    }
+  }
+
+  h3 {
+    font-size  : 20px;
+    font-weight: bold;
+    color      : #00385C;
+    text-align : left;
+  }
+
+  .form-group label {
+    font-size  : 10px;
+    color      : #00385C;
+    font-weight: normal;
+  }
+
+  a {
+    font-weight: normal;
+    font-size  : 12px;
+    color      : white;
+  }
+
+  .bg-white a {
+    color: #0088EE !important;
+  }
+
+  .btn-login {
+    font-size       : 12px;
+    font-weight     : bold;
+    background-color: #00589B;
+    border          : 1px solid #00589B;
+    height          : 32px;
+  }
+}

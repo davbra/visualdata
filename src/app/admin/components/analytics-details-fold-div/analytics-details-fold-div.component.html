@@ -1,0 +1,109 @@
+<div class="col-12">
+    <div cla style=" border-top:.5px dashed #65727B;">
+        <div class="row">
+            <div class="col-3">
+                <p class="section-title"> <b> Description :</b>
+                    <a href="javascript:void(0)" class="float-right" style="font-size: 16px;"
+                    *ngIf="isEditMode == true" (click)="showAddAnalyticsDetailsDescriptionPopup()">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </a>
+                 </p>
+                <div >
+                    <span> {{analyticsDto?.description}}</span>   
+                 </div>
+            </div>
+            <div class="col-6">
+                <table class="table" [ngClass]="{'edit-mode':isEditMode == true}">
+                    <tbody class="fold-text">
+                        <tr>
+                            <td style="width: 40%;">
+                                <b class="section-title ">Master Topic :</b>
+                            </td>
+                            <td style="width: 60%;">
+                                <b class="section-title ">Question :</b>
+                            </td>
+                        </tr>
+                        <ng-container *ngFor="let childItem of analyticsDto.analyticsDetailArr; let i = index">
+                            <tr>
+                                <td>
+                                    <div class="d-inline-block bg-white p-2 b-rounded-2  b-rounded-bottom-left-0">
+                                        <a href="javascript:void(0)" *ngIf="isEditMode == true"
+                                            (click)="showAddReportDetailsPopup(childItem.id)"> {{childItem.topic}}</a>
+                                        <span *ngIf="isEditMode == false"> {{i+1}}) {{childItem.topic}}</span>
+                                    </div>
+                                </td>
+                                <td class="position-relative">
+                                    <div class="position-absolute" style="top:5px;right:5px;"
+                                        *ngIf="isEditMode == true">
+                                        <a href="javascript:void(0)" (click)="delete(childItem)"> <img
+                                                src="assets/img/icons/delete-24px.png" alt=""> </a>
+                                    </div>
+                                    <div class="d-inline-block bg-white p-2 b-rounded-1 div-questions">
+                                        <span [innerHTML]="childItem.htmlDetails"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="separator" *ngIf="isEditMode ==true"></tr>
+                        </ng-container>
+                        <tr>
+                            <td colspan="2">
+                                <button type="button" class="btn btn-block btn-add" *ngIf="isEditMode == true"
+                                    (click)="showAddReportDetailsPopup()"> <img
+                                        src="assets/img/icons/add_circle-24px.png" alt=""> </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-3">
+                <p class="section-title"> <b>Files : </b></p>
+                <div [style.min-height]="viewOnly == true ? 'unset' : '200px'" class="d-inline-block position-relative"
+                    style="min-width: 100px;">
+                    <div>
+                        <div class="mb-3">
+                            <ng-container *ngFor="let file of analyticsFileArr">
+                                <p class="mb-1"> <a href="javascript:void(0)" (click)="onDownloadUrl(file)"
+                                        style="color:#0088EE;font-size:11px">{{file.name}}</a>
+                                    <a href="javascript:void(0)" (click)="deleteFile(file)" class="ml-4"
+                                        *ngIf="isEditMode == true">
+                                        <img src="assets/img/icons/delete-24px.png" alt="" width="18px">
+                                    </a>
+                                </p>
+                            </ng-container>
+                        </div>
+
+                        <button type="button" (click)="onDownloadUrl(null,true)"
+                            class="btn btn-success btn-block mt-2 btn-blue-light rounded-1"
+                            *ngIf="isEditMode==false && analyticsFileArr?.length > 0">
+                            <img src="assets/img/icons/bookmark-24px.png" alt="">
+                            Download</button>
+
+                        <ng-container *ngIf="isEditMode==true">
+                            <input #file type="file" (change)="upload(file.files)" hidden>
+                            <button type="button" class="btn btn-success btn-block mt-2 btn-blue-outline rounded-1"
+                                (click)="file.click()">
+                                <img src="../../../../assets/img/icons/bookmark-up-24px.png" alt="">
+                                Upload file</button>
+                        </ng-container>
+                    </div>
+                    <div class="position-absolute" *ngIf="viewOnly == false" style="bottom: 0px;right:0px;left: 0px;">
+                        <ng-container *ngIf="isEditMode == false">
+                            <button type="button" (click)="onChangeEditMode()"
+                                class="btn btn-success btn-block mt-2 btn-blue-light rounded-1">
+                                Edit</button>
+                        </ng-container>
+                        <ng-container *ngIf="isEditMode == true">
+                            <button type="button" (click)="onChangeEditMode()"
+                                class="btn btn-success btn-block mt-2 btn-blue-outline rounded-1">
+                                Back</button>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-add-report-details-popup #addReportDetailsPopup></app-add-report-details-popup>
+<app-add-analytics-details-description-popup #addAnalyticsDetailsDescriptionPopup>
+</app-add-analytics-details-description-popup>

@@ -1,0 +1,78 @@
+<nav class="navbar-default navbar-static-side position-fixed" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="logo-element">
+                    <img src="assets/img/logo-blue.png" alt="">
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="../../../../assets/img/icons/menu-icons/bookmark.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="../../../../assets/img/icons/menu-icons/comments.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="../../../../assets/img/icons/menu-icons/calls.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="../../../../assets/img/icons/menu-icons/users.png" alt="">
+                </a>
+            </li>
+            <ng-container *ngIf="userRole == roleEnum.Client">
+                <li routerLinkActive="active">
+                    <a routerLink="/admin/landing-page">
+                        <img src="assets/img/icons/icon_in_circle.png" alt="">
+                        <span class="nav-label">Landing Page</span></a>
+                </li>
+            </ng-container>
+            <ng-container *ngIf="userRole == roleEnum.Editor">
+                <li routerLinkActive="active">
+                    <a routerLink="/admin/analytics-editor">
+                        <img src="assets/img/icons/icon_in_circle.png" alt="">
+                        <span class="nav-label">Analytics Editor</span></a>
+                </li>
+            </ng-container>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="../../../../assets/img/icons/menu-icons/schedule.png" alt="">
+                </a>
+            </li>
+            <ng-container *ngIf="userRole == roleEnum.Editor">
+                <li routerLinkActive="active">
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-cogs menu-fa-icon" aria-hidden="true"></i>
+                    </a>
+                    <ul class="nav nav-second-level collapse">
+                        <li routerLinkActive="active"><a routerLink="/admin/settings/companies">
+                                <i class="fa fa-building-o" aria-hidden="true"></i> Companies</a></li>
+                    </ul>
+                </li>
+            </ng-container>
+        </ul>
+        <ul class="nav position-absolute" style="bottom: 30px; left: 10px;">
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="../../../../assets/img/icons/menu-icons/info.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <img src="../../../../assets/img/icons/menu-icons/user.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" (click)="logout()">
+                    <img src="../../../../assets/img/icons/menu-icons/logout.png" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

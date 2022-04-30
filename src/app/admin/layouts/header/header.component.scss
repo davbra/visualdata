@@ -1,0 +1,52 @@
+.navbar {
+    font-family: 'Noto Sans JP';
+    color      : #00385C !important;
+    background-color: #EBF0F2;
+    border-color: #CDD6DD;
+    height: 45px;
+}
+
+.user-menu {
+    a.dropdown-toggle {
+        font-size  : 12px;
+        font-weight: bold;
+        color      : #00385C !important;
+        padding: 10px;
+        
+        .rounded-circle {
+            background-color: #DADADA;
+            display         : inline-block;
+            width           : 20px;
+            height          : 20px;
+            text-align      : center;
+
+            i {
+                margin: unset;
+                margin-top: -5px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        width    : unset;
+        min-width: 138px;
+        padding: 10px 5px;
+        margin-top: -10px;
+        margin-right: 10px;
+    
+        a{
+            padding: 0px;
+            font-size: 10px;
+            font-weight: bold;
+            color: #00385C;
+            margin: 0px;
+            
+        }
+    }
+}
+
+app-header-details{
+    margin-left: 20px;
+}
+

@@ -1,0 +1,98 @@
+<ngx-smart-modal customClass="nsm-centered modal-lg" #addAnalyticsModel identifier="addAnalyticsModel"
+    [dismissable]="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">{{title}}</h3>
+                <button type="button" class="close" (click)="addAnalyticsModel.close()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form #nForm="ngForm" [formGroup]="rForm" novalidate [ngClass]="{'submitted-form':nForm.submitted }">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <label for="">Document Name: </label>
+                            <input type="text" class="form-control" formControlName="documentName">
+                        </div>
+                        <div class="col-6 form-group">
+                            <label for="">Type of Document: </label>
+                            <ng-select [items]="analyticsTypeArr" bindLabel="name" bindValue="id"
+                                formControlName="analyticsTypeId">
+                            </ng-select>
+                        </div>
+                        <div class="col-6 form-group">
+                            <label for="">Date: </label>
+                            <input type="text" class="form-control" name="reportDate" angular-mydatepicker
+                                [options]="myOptions" #dp="angular-mydatepicker" formControlName="reportDate"
+                                (click)="dp.toggleCalendar()">
+                        </div>
+                        <div class="col-12 form-group">
+                            <label for="">Description: </label>
+                            <textarea class="form-control" rows="3" formControlName="description"></textarea>
+                        </div>
+                        <div class="col-6 form-group">
+                            <label for="">Primary Companies: </label>
+                            <app-select-company-input #selectCompanyInputForPrimary 
+                                [selectedCompanyIdSetter]="rForm.value.primaryCompanyIdArr"></app-select-company-input>
+                        </div>
+                        <div class="col-6 form-group">
+                            <label for="">Secondary Companies: </label>
+                            <app-select-company-input #selectCompanyInputForSecondary
+                                [selectedCompanyIdSetter]="rForm.value.secondaryCompanyIdArr"></app-select-company-input>
+                        </div>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-6 form-group">
+                                    <label for="">Length: </label>
+                                    <input type="number" class="form-control" formControlName="length">
+                                </div>
+                                <div class="col-6 form-group">
+                                    <label for="">Experts: </label>
+                                    <input type="number" class="form-control" formControlName="expertCount">
+                                </div>
+                                <div class="col-6 form-group">
+                                    <label for="">Tegus Rating: {{ratingCtrl.value}}</label>
+                                    <div class="slidecontainer">
+                                        <input type="range" [formControl]="ratingCtrl" min="0" max="10" class="slider">
+                                    </div>
+                                </div>
+                                <div class="col-6 form-group">
+                                    <label for="">Analyst:</label>
+                                    <input type="text" class="form-control" formControlName="analyst">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <input #fileInput type="file" (change)="upload(fileInput.files)" hidden multiple>
+                            <label for="">Upload content: </label><br>
+                            <button type="button" class="btn btn-blue-outline btn-block" (click)="fileInput.click()">
+                                <img src="assets/img/icons/bookmark-up-24px.png" alt="">
+                                Upload file</button>
+                            <div class="mt-2">
+                                <ng-container *ngFor="let file of analyticsFileArr,let fileIndex = index">
+                                    <p class="mb-1"> <a href="javascript:void(0)" style="color:#0088EE;font-size:11px">
+                                            <i class="fa fa-file mr-1" aria-hidden="true"></i> {{file.name}}</a>
+                                        <a href="javascript:void(0)" (click)="deleteFile(fileIndex)" class="ml-4">
+                                            <img src="assets/img/icons/delete-24px.png" alt="" width="18px">
+                                        </a>
+                                    </p>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-red float-left" *ngIf="isEditMode == true"
+                        (click)="delete()">Delete </button>
+                    <button type="button" class="btn btn-blue-outline"
+                        (click)="addAnalyticsModel.close()">Cancel</button>
+                    <button type="button" class="btn btn-blue" (click)="save()">Save & Close </button>
+                    <button type="submit" class="btn btn-blue" (click)="save(false)">Save & View </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</ngx-smart-modal>
+
+<app-add-company-popup #addCompanyPopup></app-add-company-popup>

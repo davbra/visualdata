@@ -1,0 +1,71 @@
+$default-color : #F4F6F8;
+
+nav {
+    height    : 100%;
+    background: $default-color;
+
+    li {
+
+        &.nav-header,
+        &:hover {
+            background: $default-color;
+        }
+
+        .logo-element {
+            background: $default-color;
+        }
+
+        &.active {
+            border-left: unset !important;
+            background : $default-color;
+
+            a {
+                background: $default-color;
+            }
+        }
+
+        a {
+            padding   : 14px 13px;
+            text-align: center;
+
+            &:hover,
+            &:focus {
+                background-color: $default-color !important;
+            }
+        }
+    }
+
+    .nav-second-level {
+        background-color: $default-color;
+
+        &.collapse.in {
+
+            li {
+                padding-bottom: 0px;
+
+                a {
+                    color      : #00385C;
+                    font-weight: bold;
+                    min-width  : 135px;
+                    padding    : 10px 15px;
+                    text-align : left;
+                }
+            }
+        }
+    }
+}
+
+li.active a:focus .collapse.in {
+    display: block;
+}
+
+.logo-element img {
+    width : 20px;
+    height: 31px;
+}
+
+.menu-fa-icon {
+    color       : #00385C;
+    font-size   : 25px;
+    margin-right: 0px;
+}

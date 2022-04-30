@@ -1,0 +1,104 @@
+    .btn {
+        font-size     : 12px;
+        font-weight   : bold;
+        letter-spacing: .5px;
+        font-family   : 'Noto Sans JP';
+        padding       : .2rem .75rem !important;
+        height        : 32px;
+
+        &-blue-light {
+            background-color: #0088EE;
+        }
+
+        &-blue {
+            background-color: #00385C;
+
+        }
+
+        &-blue-outline {
+            color           : #0088EE;
+            border          : 1px solid #0088EE;
+            background-color: #E8F6FD;
+        }
+    }
+
+    .btn-collapse {
+        width     : 30px;
+        height    : 30px;
+        position  : absolute;
+        bottom    : 10px;
+        right     : 10px;
+        z-index   : 5;
+        text-align: center;
+
+        img {
+            margin-top: 5px;
+            z-index   : 10;
+        }
+    }
+
+    .btn-add {
+        height          : 24px;
+        border-color    : #CDD6DD;
+        color           : #00385C;
+        background-color: white;
+        line-height     : 24px;
+
+        img {
+            margin-top: -10px;
+        }
+    }
+
+    ::ng-deep .div-questions {
+
+        ul,
+        ol {
+            margin-bottom       : 0px !important;
+            padding-inline-start: 20px !important;
+        }
+    }
+
+    .section-title {
+        vertical-align: top !important;
+        padding-left  : 5px !important;
+        font-size     : 10px;
+        color         : #00385C;
+    }
+
+    p.section-title{
+        margin-top: 8px !important;
+        margin-bottom: 6px;
+    }
+
+    table.edit-mode {
+        tr {
+
+            &:first-child{
+                td{
+                    background-color: unset;
+                    border: unset;
+                }
+            }
+
+            &:last-child td{
+                background-color: transparent;
+                border: unset;
+                padding: 0px;
+                padding-left: 0px !important;
+            }
+
+            td {
+                background-color: white;
+                border: 1px solid #CDD6DD;
+
+                &:hover{
+                    background-color: white !important;
+                    border: 1px solid #CDD6DD !important;
+                }
+            }
+        }
+    }
+
+    .separator{
+        background-color: #0088EE;
+    }

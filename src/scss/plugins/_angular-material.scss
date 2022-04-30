@@ -1,0 +1,64 @@
+   .mat-sort-header {
+      position : relative;
+      min-width: 60px;
+
+    //   &::before {
+    //       content : url(../../assets/img/icons/sort_vert-24px.png);
+    //       right   : 2px;
+    //       position: absolute;
+    //       margin  : auto;
+    //   }
+
+
+      &.hide-mat-icon {
+          min-width: unset;
+
+          &::before {
+              content: unset !important;
+          }
+
+          &:hover {
+              content: unset !important;
+
+              .mat-sort-header-arrow {
+                  content   : unset !important;
+                  background: unset !important;
+                  color     : transparent;
+              }
+          }
+
+          &[aria-sort="ascending"] {
+              .mat-sort-header-arrow {
+                  .mat-sort-header-stem {
+                      background: unset !important;
+                  }
+
+                  .mat-sort-header-indicator {
+                      div {
+                          background: unset !important;
+                      }
+                  }
+              }
+          }
+
+          &[aria-sort="descending"] {
+              .mat-sort-header-arrow {
+                  .mat-sort-header-stem {
+                      background: unset !important;
+                  }
+
+                  .mat-sort-header-indicator {
+                      div {
+                          background: unset !important;
+                      }
+                  }
+              }
+          }
+
+          .mat-sort-header-arrow {
+              display: none;
+          }
+
+      }
+
+  } 

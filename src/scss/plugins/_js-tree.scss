@@ -1,0 +1,12 @@
+@import "~jstree/dist/themes/default/style.min.css";
+
+.jstree-container-ul  a {
+    white-space: normal !important;
+    height: auto;
+    padding: 1px 2px;
+    margin-right: 30px;
+}
+
+.jstree-default .jstree-anchor {
+    height: auto !important;
+}

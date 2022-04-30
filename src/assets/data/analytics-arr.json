@@ -1,0 +1,52 @@
+[
+    {
+        "flag":0,
+        "primaryCompanyIdArr":[],
+        "documentName":"Project Delivery Manager - American Integrity Insurance Company 1",
+        "date":"04/15/2020",
+        "updatedDate":"04/16/2020",
+        "expertCount":10,
+        "length":3,
+        "analyticsTypeId":1 
+    },
+    {
+        "flag":0,
+        "primaryCompanyIdArr":[],
+        "documentName":" Former Regional Sales Director - Guidewire Software",
+        "date":"03/03/2020",
+        "updatedDate":"03/03/2020",
+        "expertCount":13,
+        "length":3,
+        "analyticsTypeId":3
+    },
+    {
+        "flag":0,
+        "primaryCompanyIdArr":[],
+        "documentName":"Former Senior Director Go to Market Strategy and Operations - Salesforce 1",
+        "date":"01/16/2020",
+        "updatedDate":"01/16/2020",
+        "expertCount":11,
+        "length":3,
+        "analyticsTypeId":2
+    },
+    {
+        "flag":0,
+        "primaryCompanyIdArr":[],
+        "documentName":"Former Vice President Sales Strategy and Customer Success - Duck Creek Technologies 1",
+        "date":"01/16/2020",
+        "updatedDate":"06/16/2020",
+        "expertCount":23,
+        "length":3,
+        "analyticsTypeId":4
+    },
+    {
+        "flag":0,
+        "primaryCompanyIdArr":[],
+        "documentName":" Senior Vice President of Technology - Southern Farm Bureau Casualty 1",
+        "date":"07/1/2020",
+        "updatedDate":"07/1/2020",
+        "expertCount":1,
+        "length":3,
+        "analyticsTypeId":5
+    }
+]

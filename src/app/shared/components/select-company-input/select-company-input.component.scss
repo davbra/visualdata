@@ -1,0 +1,10 @@
+.company-span{
+    color: #0088EE;
+    font-weight: 500;
+    font-family: 'Noto Sans JP';
+    font-size: 12px;
+}
+
+:host ::ng-deep .ng-select .ng-arrow-wrapper {
+    display: none;
+}
